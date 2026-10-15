@@ -1,0 +1,64 @@
+base_mesh: "test.obj"
+tag: "withNoise" 
+sample_type: unclosed # closed, unclosed
+
+# LOD 参数
+view_height: 1 # 初始高度
+view_height_multiple: 5 #增大倍数
+simplification_rate: 0.7 # 简化率
+min_width_on_image: 32 # n*n
+vis_loss_decay: exp
+vis_loss_min: 0.003
+vis_loss_max: 0.03
+
+# 简化参数：
+percent_rate: 0.05
+
+# 训练参数
+batch: 4
+num_iter: 10000
+learning_rate: 0.010
+out_dir: "test"
+val_step: 1000 # val matrics and save images
+b_saveMesh: False
+
+# Loss
+loss: l1 #l1, l2, mse, smape, relativel2, smoothl1, huber
+lamda_img: 0.7 # vis
+lamda_ssim: 0.3
+lamda_lap: 1.0 # topo
+lamda_edge: 0.35
+lamda_move: 0.1
+lamda_geom: 1 # geometric
+schedule_loss_maxIter: 0.6
+schedule_loss_geom_max: 1 # 余弦退火
+schedule_loss_geom_min: 0.01
+schedule_loss_topo_max: 0.298
+schedule_loss_topo_min: 0.01
+
+tone_mapping: True # 计算图像L1损失时使用
+
+# 可微参数
+train_res: 
+  - 1024 
+  - 1024 
+custom_mip: False
+num_layer: 1 # 深度layer
+look_aspect: 6 # 6 is all aspects; 5 is not include bottom
+
+# camera参数, 上方向是啥，右手坐标系是y
+camera_up:
+  - 0.0
+  - 1.0
+  - 0.0
+camera_view_random: True # False is center of model
+
+### matieral
+light_power: 6
+min_roughness: 0.25
+background: white #  white. only white for the mask loss computation
+bsdf_type: kd_only #pbr means kd, ks and normals; diffuse means kd and normals; kd_only means kd only
+texture_res:
+  - 4096
+  - 4096
+random_textures: true
