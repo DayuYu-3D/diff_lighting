@@ -14,14 +14,6 @@
 
 <a id="method"></a>
 
-## Method
-
-方法以原始模型为参照，先构建初始代理，再通过可微分方法联合利用几何与外观信息进行迭代优化。
-
-![几何与外观联合驱动的简化流程](assets/references/2.svg)
-
-<a id="install"></a>
-<a id="installation"></a>
 
 ## Installation
 
