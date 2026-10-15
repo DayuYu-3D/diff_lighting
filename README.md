@@ -1,6 +1,6 @@
 <p class="hero" align="center"><img src="assets/references/6.svg" width="1100" alt="大场景三维模型主视觉"></p>
 
-<h1 align="center">Mosalite:Differentiable Mesh Simplification</h1>
+<h1 align="center">Photorealistic 3D Model Lightweighting Driven by Joint Appearance and Geometry Cues via Differentiable Rendering</h1>
 
 <p align="center"><b>几何与外观联合驱动的可微分模型简化</b></p>
 
